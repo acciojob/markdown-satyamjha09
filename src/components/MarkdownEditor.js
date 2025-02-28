@@ -1,15 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 
 const MarkdownEditor = () => {
-    const [markdown, setMarkdown] = useState(`# Hello World\n\n# Heading`);
-
-
-
-  useEffect(() => {
-    console.log("Rendered Markdown:", markdown);
-  }, [markdown]);
-  
+  const [markdown, setMarkdown] = useState("# Welcome to Markdown Editor\n\nType here...");
 
   return (
     <div className="app">
@@ -17,6 +10,7 @@ const MarkdownEditor = () => {
         className="textarea"
         value={markdown}
         onChange={(e) => setMarkdown(e.target.value)}
+        placeholder="Enter Markdown here..."
       />
       <div className="preview">
         <ReactMarkdown>{markdown}</ReactMarkdown>
