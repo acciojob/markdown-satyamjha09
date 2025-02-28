@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 
 const MarkdownEditor = () => {
-  const [markdown, setMarkdown] = useState("# Hello World"); // Default value for testing
+    const [markdown, setMarkdown] = useState(`# Hello World\n\n# Heading`);
+
+
+
+  useEffect(() => {
+    console.log("Rendered Markdown:", markdown);
+  }, [markdown]);
+  
 
   return (
     <div className="app">
